@@ -7,7 +7,7 @@ const Todo = (props) => {
 
     const handleClick = (task) => {
         setTodos((prevTodos) => (
-            prevTodos.map((todo) => ({...todo, completed: !todo.completed}))
+            prevTodos.map((todo) => (todo.task==task ? {...todo, completed: !todo.completed} : todo))
         ))
     }
   
