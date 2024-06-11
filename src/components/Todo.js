@@ -13,7 +13,7 @@ const Todo = (props) => {
   
   return (
     <div>
-        <li>{todo.task} </li>
+        <li>{todo.task} {!todo.status ? <button onClick={() =>handleClick(todo.task)}>Complete</button> : ''}</li>
     </div>
   )
 }
