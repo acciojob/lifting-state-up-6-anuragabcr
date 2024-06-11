@@ -12,9 +12,9 @@ const Todo = (props) => {
     }
   
   return (
-    <div>
-        <li>{todo.task} {!todo.completed ? <button onClick={() =>handleClick(todo.task)}>Complete</button> : ''}</li>
-    </div>
+    <>
+        <li>{todo.task} {!todo.completed ? <button onClick={() =>handleClick(todo.task)}>Complete</button> : null}</li>
+    </>
   )
 }
 
