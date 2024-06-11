@@ -5,7 +5,7 @@ import './../styles/App.css';
 import Todo from "./Todo";
 
 const App = () => {
-  const [todos, setTodos] = useState([{task: 'Learn React', status: false}, {task: 'Build a React App', status: false}, {task: 'Deploy the React App', status: false}])
+  const [todos, setTodos] = useState([{task: 'Learn React', completed: false}, {task: 'Build a React App', completed: false}, {task: 'Deploy the React App', completed: false}])
   
   return (
     <div>

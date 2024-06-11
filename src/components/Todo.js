@@ -7,13 +7,13 @@ const Todo = (props) => {
 
     const handleClick = (task) => {
         setTodos((prevTodos) => (
-            prevTodos.map((todo) => (todo.task==task ? {...todo, status: !todo.status} : todo))
+            prevTodos.map((todo) => (todo.task==task ? {...todo, completed: !todo.completed} : todo))
         ))
     }
   
   return (
     <div>
-        <li>{todo.task} {!todo.status ? <button onClick={() =>handleClick(todo.task)}>Complete</button> : ''}</li>
+        <li>{todo.task} {!todo.completed ? <button onClick={() =>handleClick(todo.task)}>Complete</button> : ''}</li>
     </div>
   )
 }
