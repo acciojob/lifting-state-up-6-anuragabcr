@@ -1,21 +1,24 @@
+import React, { useEffect } from 'react';
 
-import React from "react";
-import './../styles/App.css';
-
-const Todo = (props) => {
-    const { todo, setTodos } = props
-
-    const handleClick = (task) => {
-        setTodos((prevTodos) => (
-            prevTodos.map((todo) => (todo.task==task ? {...todo, completed: !todo.completed} : todo))
-        ))
-    }
-  
+function TodoList({ todos, handleComplete }) {
+    console.log(todos);
+    useEffect(()=>{},[todos])
   return (
-    <>
-        <li>{todo.task} {!todo.completed ? <button onClick={() =>handleClick(todo.task)}>Complete</button> : null}</li>
-    </>
-  )
+    <div>
+      <h2>Todo Items:</h2>
+      <ul>
+     
+        {todos.map(todo => (
+          <li key={todo.id}>
+            {/* Render todo text */}
+            {todo.text}
+           
+            <button style={{display: todo.completed?"none":"inline-block"}} onClick={() => handleComplete(todo.id)}>Complete</button>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
 }
 
-export default Todo
+export default TodoList;
